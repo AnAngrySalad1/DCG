@@ -58,7 +58,7 @@ if (count GVAR(groups) <= ceil GVAR(groupsMaxCount)) then {
                             // set waypoint around target player
                             _wp = _grp addWaypoint [getPosATL _player,0];
                             _wp setWaypointCompletionRadius 200;
-                            _wp setWaypointBehaviour "SAFE";
+                            _wp setWaypointBehaviour "AWARE";
                             _wp setWaypointFormation "STAG COLUMN";
                             _wp setWaypointSpeed "NORMAL";
                             _wp setWaypointStatements [
