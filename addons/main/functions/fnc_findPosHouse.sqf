@@ -24,7 +24,7 @@ _houseArray = _houseArray select {!((_x buildingPos -1) isEqualTo []) && {!(type
 
 if !(_houseArray isEqualTo []) then {
 	private _house = selectRandom _houseArray;
-	private _housePosArray = _house buildingPos -1;
+	private _housePosArray = _house call BIS_fnc_buildingpositions;
 
 	{
 		if (_x call FUNC(inBuilding)) exitWith {
