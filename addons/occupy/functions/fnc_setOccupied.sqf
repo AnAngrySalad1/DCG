@@ -19,15 +19,15 @@ __________________________________________________________________*/
 #define WRECKS \
     ["a3\structures_f\wrecks\Wreck_Car2_F.p3d","a3\structures_f\wrecks\Wreck_Car3_F.p3d","a3\structures_f\wrecks\Wreck_Car_F.p3d","a3\structures_f\wrecks\Wreck_Offroad2_F.p3d","a3\structures_f\wrecks\Wreck_Offroad_F.p3d","a3\structures_f\wrecks\Wreck_Truck_dropside_F.p3d","a3\structures_f\wrecks\Wreck_Truck_F.p3d","a3\structures_f\wrecks\Wreck_UAZ_F.p3d","a3\structures_f\wrecks\Wreck_Van_F.p3d","a3\structures_f\wrecks\Wreck_Ural_F.p3d"]
 #define SAFE_DIST 12
-#define INF_COUNT_VILL ([15,30] call EFUNC(main,getUnitCount))
-#define INF_COUNT_CITY ([25,40] call EFUNC(main,getUnitCount))
-#define INF_COUNT_CAP ([30,50] call EFUNC(main,getUnitCount))
-#define VEH_COUNT_VILL 1
-#define VEH_COUNT_CITY 1
-#define VEH_COUNT_CAP 2
-#define AIR_COUNT_VILL 0
-#define AIR_COUNT_CITY 1
-#define AIR_COUNT_CAP 2
+#define INF_COUNT_VILL ([40,50] call EFUNC(main,getUnitCount))
+#define INF_COUNT_CITY ([50,65] call EFUNC(main,getUnitCount))
+#define INF_COUNT_CAP ([70,90] call EFUNC(main,getUnitCount))
+#define VEH_COUNT_VILL 3
+#define VEH_COUNT_CITY 5
+#define VEH_COUNT_CAP 7
+#define AIR_COUNT_VILL 1
+#define AIR_COUNT_CITY 2
+#define AIR_COUNT_CAP 3
 
 params [
     ["_name","",[""]],
@@ -125,7 +125,7 @@ _icon setMarkerText (["Liberate",_typeName] joinString " ");
 _icon setMarkerType "o_installation";
 _mrkArray pushBack _icon;
 
-GVAR(location) = [_name,_center,_size,_type]; // set as occupied location
+GVAR(location) = [_name,_center,_,_type]; // set as occupied location
 EGVAR(civilian,blacklist) pushBack _name; // stop civilians from spawning in location
 
 [
